@@ -1,10 +1,9 @@
-import LiveClock from "./LiveClock"; // Import the live clock component
+import LiveClock from "./LiveClock";
 
 const Footer = () => {
   return (
     <footer className="bg-gray-50 text-slate-700 px-6 py-12 md:py-20 lg:py-24 md:px-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-between text-center md:text-left space-y-10 md:space-y-0 lg:px-24">
-        {/* Socials Section */}
         <div className="flex flex-col items-center md:items-start space-y-6">
           <h1 className="text-xl font-bold font-link-pixel-font">Socials</h1>
           <div className="flex space-x-6 text-3xl">
@@ -27,13 +26,11 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Live Clock Section */}
         <div className="flex flex-col items-center md:items-start space-y-6 pt-4 md:pt-2">
           <LiveClock />
         </div>
       </div>
 
-      {/* Copyright Section */}
       <div className="w-full flex items-center justify-center mt-12">
         <h1 className="text-lg font-jersey">
           &copy; Gwen Bautista Portfolio 2025

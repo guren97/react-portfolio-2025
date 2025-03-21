@@ -45,7 +45,6 @@ const ProjectCard = () => {
 
   return (
     <div className="relative w-full">
-      {/* Scrollable container */}
       <div
         ref={scrollRef}
         className="flex flex-nowrap gap-6 p-4 overflow-x-auto hide-scrollbar scroll-smooth snap-x snap-mandatory sm:grid sm:grid-cols-2 lg:grid-cols-3 drop-shadow-[5px_5px_0px_rgba(0,0,139,1)] rounded-lg"
@@ -73,7 +72,6 @@ const ProjectCard = () => {
         ))}
       </div>
 
-      {/* Navigation Buttons */}
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

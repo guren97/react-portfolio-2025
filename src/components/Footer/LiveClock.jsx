@@ -17,7 +17,7 @@ const LiveClock = () => {
       minute: "2-digit",
       second: "2-digit",
       hour12: true,
-      timeZone: "Asia/Manila", // Ensures it shows Philippine Time (PHT)
+      timeZone: "Asia/Manila",
     }).format(date);
   };
 

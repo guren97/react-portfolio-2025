@@ -30,7 +30,6 @@ const Navbar = () => {
           </span>
         </h1>
 
-        {/* Desktop Nav Links */}
         <div className="hidden md:flex space-x-6">
           {navLinks.map((link) => (
             <button
@@ -43,7 +42,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-white focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
@@ -52,10 +50,8 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Nav Menu */}
       {isOpen && (
         <div className="fixed inset-0 bg-blue-900 flex flex-col items-center justify-center space-y-6 z-50">
-          {/* Close Button */}
           <button
             onClick={() => setIsOpen(false)}
             className="absolute top-6 right-6 text-white text-3xl"
@@ -63,7 +59,6 @@ const Navbar = () => {
             <X size={32} />
           </button>
 
-          {/* Navigation Links */}
           {navLinks.map((link) => (
             <button
               key={link.id}
