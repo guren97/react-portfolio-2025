@@ -32,8 +32,9 @@ const Footer = () => {
       </div>
 
       <div className="w-full flex items-center justify-center mt-12">
-        <h1 className="text-lg font-jersey">
-          &copy; Gwen Bautista Portfolio 2025
+        <h1 className="text-lg font-link-pixel-font tracking-tight text-yellow-400 drop-shadow-[1px_1px_0px_rgba(0,0,139,1)]">
+          <span className="font-jersey">&copy;</span> Gwen Bautista Portfolio
+          2025
         </h1>
       </div>
     </footer>
