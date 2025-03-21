@@ -78,7 +78,7 @@ const ProjectCard = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => scroll("prev")}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-yellow-400 border-2 border-blue-700 text-blue-700 p-2 rounded-full shadow-lg z-10 sm:hidden md:hidden lg:hidden hover:p-3"
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-yellow-400  text-blue-700 p-2 rounded-full drop-shadow-[2px_2px_0px_rgba(0,0,139,1)]  z-10 sm:hidden md:hidden lg:hidden hover:p-3"
       >
         <ChevronLeft size={24} />
       </motion.button>
@@ -87,7 +87,7 @@ const ProjectCard = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => scroll("next")}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-yellow-400 border-2 border-blue-700 text-blue-700  p-2 rounded-full shadow-lg z-10 sm:hidden md:hidden lg:hidden hover:p-3"
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-yellow-400  text-blue-700  p-2 rounded-full drop-shadow-[2px_2px_0px_rgba(0,0,139,1)]  z-10 sm:hidden md:hidden lg:hidden hover:p-3"
       >
         <ChevronRight size={24} />
       </motion.button>

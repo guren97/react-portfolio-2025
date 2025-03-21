@@ -5,7 +5,7 @@ const Project = () => {
   return (
     <section
       id="projects"
-      className=" bg-gradient-to-b from-blue-900 via-blue-800 to-blue-900 text-slate-100 px-6 py-12 sm:px-8 md:py-24 md:px-16 lg:py-28 text-center lg:mx-auto"
+      className="flex flex-col items-center justify-center  bg-gradient-to-b from-blue-900 via-blue-800 to-blue-900 text-slate-100 px-6 py-12 md:py-24 lg:py-28"
     >
       <Heading
         title="Projects"
