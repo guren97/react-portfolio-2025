@@ -3,6 +3,19 @@ import PixelPic from "../../assets/images/PixelPic.webp";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const offset = 50;
+      const sectionPosition =
+        section.getBoundingClientRect().top + window.scrollY;
+
+      window.scrollTo({
+        top: sectionPosition - offset,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <header
       id="home"
@@ -58,12 +71,12 @@ const Hero = () => {
 
           {/* Button and Social Links Container */}
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full mt-6 gap-4 sm:gap-0">
-            <a
-              href="#projects"
-              className="px-4 sm:px-6 py-2 sm:py-3 bg-yellow-400 text-blue-900 text-base sm:text-lg font-bold font-link-pixel-font rounded-lg shadow-lg border-2 sm:border-4 border-blue-900 hover:scale-105 transition-all duration-300"
+            <button
+              onClick={() => handleScroll("projects")}
+              className="px-6 py-3 bg-yellow-400 text-blue-900 text-lg font-bold font-link-pixel-font rounded-lg shadow-lg border-4 border-blue-900 hover:scale-105 transition-all duration-300"
             >
               View My Work
-            </a>
+            </button>
             {/* Possible Component - Social Links */}
             <div className="flex space-x-4 sm:space-x-4 text-3xl">
               <a
