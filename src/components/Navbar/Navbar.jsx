@@ -1,3 +1,4 @@
+import { useLenis } from "../misc/LenisProvider.jsx";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -5,47 +6,67 @@ import navLinks from "./navLinks.js";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const lenis = useLenis();
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"; // Disable scrolling
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""; // Enable scrolling
+      document.body.style.overflow = "";
     }
   }, [isOpen]);
 
-  const handleScroll = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      const offset = 50;
-      const sectionPosition =
-        section.getBoundingClientRect().top + window.scrollY;
+  const smoothScrolltoSection = (id, offset = 50) => {
+    const element = document.getElementById(id);
 
-      window.scrollTo({
-        top: sectionPosition - offset,
-        behavior: "smooth",
+    if (lenis.current && element) {
+      setTimeout(() => {
+        const sectionPosition =
+          element.getBoundingClientRect().top + window.scrollY;
+
+        lenis.current.scrollTo(sectionPosition - offset, {
+          duration: 1.2,
+          easing: (t) => t * (2 - t),
+        });
       });
     }
-    setIsOpen(false);
   };
+
+  //   Manual Smooth Scroll
+
+  //   const handleScroll = (id) => {
+  //     const section = document.getElementById(id);
+  //     if (section) {
+  //       const offset = 50;
+  //       const sectionPosition =
+  //         section.getBoundingClientRect().top + window.scrollY;
+
+  //       window.scrollTo({
+  //         top: sectionPosition - offset,
+  //         behavior: "smooth",
+  //       });
+  //     }
+  //     setIsOpen(false);
+  //   };
 
   return (
     <nav className="bg-blue-800 shadow-md sticky top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 py-4 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-2xl font-pixel-font text-yellow-400 uppercase relative">
-          GB
-          <span className="absolute inset-0 text-blue-700 -z-10 drop-shadow-[3px_3px_0px_rgba(0,0,139,1)]">
+        <a href="/">
+          <h1 className="text-2xl font-pixel-font text-yellow-400 uppercase relative">
             GB
-          </span>
-        </h1>
+            <span className="absolute inset-0 text-blue-700 -z-10 drop-shadow-[3px_3px_0px_rgba(0,0,139,1)]">
+              GB
+            </span>
+          </h1>
+        </a>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6">
           {navLinks.map((link) => (
             <button
               key={link.id}
-              onClick={() => handleScroll(link.id)}
+              onClick={() => smoothScrolltoSection(link.id)}
               className="text-white text-lg font-link-pixel-font hover:text-yellow-400 transition duration-300 cursor-pointer"
             >
               {link.label}
@@ -53,7 +74,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           className="md:hidden text-white focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
@@ -96,7 +116,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <button
                   key={link.id}
-                  onClick={() => handleScroll(link.id)}
+                  onClick={() => smoothScrolltoSection(link.id)}
                   className="text-yellow-400 text-2xl font-link-pixel-font hover:text-yellow-100 transition duration-300 drop-shadow-[2px_2px_0px_rgba(0,0,139,1)]"
                 >
                   {link.label}

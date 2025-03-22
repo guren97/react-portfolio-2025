@@ -1,3 +1,4 @@
+import LenisProvider from "./components/misc/LenisProvider.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import TechStack from "./components/Stack/TechStack.jsx";
 import InfiniteTextLoop from "./components/InfiniteTextLoop/InfiniteTextLoop.jsx";
@@ -8,15 +9,17 @@ import Footer from "./components/Footer/Footer.jsx";
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <InfiniteTextLoop />
-      <About />
-
-      <TechStack />
-
-      <Project />
-      <Footer />
+      <LenisProvider>
+        <div className="App">
+          <Navbar />
+          <Hero />
+          <InfiniteTextLoop />
+          <About />
+          <TechStack />
+          <Project />
+          <Footer />
+        </div>
+      </LenisProvider>
     </>
   );
 };

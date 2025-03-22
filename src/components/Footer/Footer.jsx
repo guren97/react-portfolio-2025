@@ -26,6 +26,22 @@ const Footer = () => {
           </div>
         </div>
 
+        <div className="flex flex-col items-center md:items-start space-y-6">
+          <h1 className="text-xl font-bold font-link-pixel-font">Email</h1>
+          <div className="flex space-x-6 text-3xl">
+            <a
+              href="mailto:gwenbautista24@yahoo.com"
+              rel="noopener noreferrer"
+              className="group text-yellow-400 hover:text-yellow-500 hover:scale-105 transition-all duration-300  "
+            >
+              <h1 className="text-2xl flex justify-center items-center  gap-2 font-jersey tracking-tight text-yellow-400 drop-shadow-[1px_1px_0px_rgba(0,0,139,1)]">
+                <i class="hn hn-envelope-solid"></i>{" "}
+                <span>gwenbautista24@yahoo.com</span>
+              </h1>
+            </a>
+          </div>
+        </div>
+
         <div className="flex flex-col items-center md:items-start space-y-6 pt-4 md:pt-2">
           <LiveClock />
         </div>
