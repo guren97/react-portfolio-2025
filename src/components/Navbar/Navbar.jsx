@@ -30,6 +30,8 @@ const Navbar = () => {
         });
       });
     }
+
+    setIsOpen(false); // ✅ Close sidebar after clicking
   };
 
   //   Manual Smooth Scroll
@@ -67,7 +69,7 @@ const Navbar = () => {
             <button
               key={link.id}
               onClick={() => smoothScrolltoSection(link.id)}
-              className="text-white text-lg font-link-pixel-font hover:text-yellow-400 transition duration-300 cursor-pointer"
+              className="text-white text-lg font-link-pixel-font hover:text-yellow-400 transition duration-300 cursor-pointer drop-shadow-[3px_3px_0px_rgba(0,0,139,1)]"
             >
               {link.label}
             </button>

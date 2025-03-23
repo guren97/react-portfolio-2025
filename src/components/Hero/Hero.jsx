@@ -76,7 +76,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full mt-6 gap-4 sm:gap-0">
               <button
                 onClick={() => scrollToWorks("projects")}
-                className="px-6 py-3 bg-yellow-400 text-blue-900 text-lg font-bold font-link-pixel-font rounded-lg shadow-lg border-4 border-blue-900 hover:scale-105 transition-all duration-300"
+                className="px-6 py-3 bg-yellow-400 text-blue-900 text-lg font-bold font-link-pixel-font rounded-lg shadow-lg   drop-shadow-[4px_4px_0px_rgba(0,0,139,1)] hover:scale-105 transition-all duration-300"
               >
                 View My Work
               </button>

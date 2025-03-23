@@ -10,15 +10,13 @@ const App = () => {
   return (
     <>
       <LenisProvider>
-        <div className="App">
-          <Navbar />
-          <Hero />
-          <InfiniteTextLoop />
-          <About />
-          <TechStack />
-          <Project />
-          <Footer />
-        </div>
+        <Navbar />
+        <Hero />
+        <InfiniteTextLoop />
+        <About />
+        <TechStack />
+        <Project />
+        <Footer />
       </LenisProvider>
     </>
   );
