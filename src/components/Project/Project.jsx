@@ -1,5 +1,27 @@
 import Heading from "../Heading/Heading";
+import Microlink from "@microlink/react";
 import ProjectCard from "./ProjectCard";
+
+const projects = [
+  {
+    title: "Watch Haven",
+    url: "https://watch-haven-omega.vercel.app/",
+    views: 1200,
+    rating: 4.7,
+  },
+  {
+    title: "Puppy Express",
+    url: "https://puppy-express.vercel.app/",
+    views: 980,
+    rating: 4.5,
+  },
+  {
+    title: "Tumbler Rizz",
+    url: "https://tumbler-rizz.vercel.app/",
+    views: 1340,
+    rating: 4.9,
+  },
+];
 
 const Project = () => {
   return (
@@ -18,8 +40,24 @@ const Project = () => {
         Below you can find some of my latest mockup designs and projects.
       </p>
 
-      <div className="w-full flex flex-col items-center justify-center lg:flex lg:items-center lg:justify-center lg:mx-auto  ">
+      <div className="w-full flex flex-wrap justify-center gap-6 mt-8">
         <ProjectCard />
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="microlink-card relative bg-gray-100 border-4 border-yellow-400 rounded-lg shadow-lg overflow-hidden 
+                 transition-transform hover:scale-105 w-full sm:w-[90%] md:w-[45%] lg:w-[30%] xl:w-[24%]"
+          >
+            <Microlink
+              url={project.url}
+              size="large"
+              className="w-full"
+              style={{
+                transition: "transform 0.3s ease",
+              }}
+            />
+          </div>
+        ))}
       </div>
     </section>
   );
